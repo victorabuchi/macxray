@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="color-scheme" content="light dark">
-<title>MacXray: your Mac, from the inside</title>
+<title>MacXray: see inside your Mac</title>
 <meta name="description" content="MacXray shows what your Mac is doing right now, and how: every app and the processes behind it, the files they change, who they talk to, the path each keypress takes, the microphone and camera, Wi-Fi and Bluetooth, the chip, the memory, the battery and everything you copy. Live, in plain English. Free for macOS Sequoia or later.">
 <link rel="canonical" href="https://victorabuchi.github.io/macxray-app/">
 <link rel="icon" href="favicon.ico" sizes="any">
@@ -14,7 +14,7 @@
 <meta name="theme-color" content="#061215" media="(prefers-color-scheme: dark)">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="MacXray">
-<meta property="og:title" content="MacXray: your Mac, from the inside">
+<meta property="og:title" content="MacXray: see inside your Mac">
 <meta property="og:description" content="See what your Mac is doing right now, live and in plain English. Free for macOS Sequoia or later.">
 <meta property="og:url" content="https://victorabuchi.github.io/macxray-app/">
 <meta property="og:image" content="https://victorabuchi.github.io/macxray-app/assets/og.jpg">
@@ -41,20 +41,15 @@
 <main id="main">
   <section class="hero">
     <div class="wrap">
-      <span class="eyebrow"><span class="live" aria-hidden="true"></span>Live · For every Mac</span>
-      <h1>Your Mac, <span>from the inside.</span></h1>
+      <h1>See inside <span>your Mac.</span></h1>
       <p class="lede">MacXray shows what your Mac is doing right now, and how: every app and the processes behind it, the files they change and who they talk to, the path each keypress takes, who's using the microphone and camera, the Wi-Fi and Bluetooth radios, the chip, the memory, the battery and everything you copy. Live, and in plain English.</p>
       <div class="actions">
         <a class="btn" href="download/"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3v10M5.5 8.8 10 13.3l4.5-4.5M4 16.5h12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Download for Mac</a>
         <a class="btn line" href="#views">See what it shows</a>
       </div>
       <p class="meta"><span>Free</span><span>macOS Sequoia 15 or later</span><span>Apple silicon and Intel</span><span>Notarized by Apple</span></p>
-      <svg class="ecg" viewBox="0 0 1000 70" preserveAspectRatio="none" aria-hidden="true">
-        <path class="trace" d="M0 40H290Q300 33 310 40H340L348 46L360 6L372 62L380 40H410Q428 24 446 40H690Q700 33 710 40H740L748 46L760 6L772 62L780 40H810Q828 24 846 40H1000"/>
-        <path class="beat" pathLength="2000" d="M0 40H290Q300 33 310 40H340L348 46L360 6L372 62L380 40H410Q428 24 446 40H690Q700 33 710 40H740L748 46L760 6L772 62L780 40H810Q828 24 846 40H1000"/>
-      </svg>
       <div class="showcase" id="showcase">
-        <div class="film" data-film data-scenes="main" data-v="040"><img src="assets/shots/now-light.webp" width="2000" height="1250" alt="MacXray's Now view: the Mac drawn as an x-ray, with its chip, memory, battery cells, network and disk each lit by a live reading"></div>
+        <div class="film" data-film data-scenes="main" data-v="041"><img src="assets/shots/now-light.webp" width="2000" height="1250" alt="MacXray's Now view: the Mac drawn as an x-ray, with its chip, memory, battery cells, network and disk each lit by a live reading"></div>
       </div>
       <p class="demo-note">Real screens from a Mac, with sample copies on the clipboard.</p>
     </div>
@@ -82,19 +77,17 @@
   </section>
 
   <section id="clipboard">
-    <div class="wrap split">
-      <div>
-        <span class="eyebrow">Clipboard</span>
-        <h2 class="title">Everything you copy, kept.</h2>
-        <p class="lede">MacXray keeps what you copy, every format of every copy, in full. Go back to anything you copied and copy it again.</p>
-        <ul class="points">
-          <li><strong>Nothing cut short.</strong> Long text, links, code, rich text and files, shown whole.</li>
-          <li><strong>Images exactly as you copied them,</strong> at full size. Copy them again, save them or open them.</li>
-          <li><strong>Find it again.</strong> Search everything you copied, pin what you use most, and delete any copy or clear the lot.</li>
-          <li><strong>Passwords stay secret.</strong> Copies that password managers mark as sensitive are never read or saved.</li>
-        </ul>
+    <div class="wrap">
+      <span class="eyebrow">Clipboard</span>
+      <h2 class="title">Everything you copy, kept.</h2>
+      <p class="lede">MacXray keeps what you copy, every format of every copy, in full. Go back to anything you copied and copy it again.</p>
+      <div class="cols">
+        <div><h3>Nothing cut short</h3><p>Long text, links, code, rich text and files, shown whole.</p></div>
+        <div><h3>Images exactly as copied</h3><p>At full size. Copy them again, save them or open them.</p></div>
+        <div><h3>Find it again</h3><p>Search everything you copied, pin what you use most, and delete any copy or clear the lot.</p></div>
+        <div><h3>Passwords stay secret</h3><p>Copies that password managers mark as sensitive are never read or saved.</p></div>
       </div>
-      <figure class="window">
+      <figure class="window wide">
         <div class="titlebar" aria-hidden="true"><i></i><i></i><i></i><b>MacXray</b></div>
         <picture>
           <source srcset="assets/shots/clipboard-dark.webp" media="(prefers-color-scheme: dark)">
@@ -110,7 +103,7 @@
       <h2 class="title">Every part of your Mac, live.</h2>
       <p class="lede">Wi-Fi and Bluetooth, the microphone and camera, the chip, the memory, the battery and macOS's own diary: each read live, with what it means and how it works written next to it.</p>
       <div class="showcase">
-        <div class="film" data-film data-scenes="more" data-v="040"><img src="assets/shots/wireless-light.webp" width="2000" height="1250" alt="MacXray's Wireless view: the Wi-Fi signal between the Mac and the router"></div>
+        <div class="film" data-film data-scenes="more" data-v="041"><img src="assets/shots/wireless-light.webp" width="2000" height="1250" alt="MacXray's Wireless view: the Wi-Fi signal between the Mac and the router"></div>
       </div>
     </div>
   </section>
@@ -198,7 +191,7 @@
   <section class="closing">
     <div class="wrap">
       <img src="assets/icon-192.webp" alt="" width="96" height="96" loading="lazy">
-      <h2>See inside your Mac.</h2>
+      <h2>Get MacXray.</h2>
       <p class="lede">Free for macOS Sequoia or later, on Apple silicon and Intel.</p>
       <div class="actions">
         <a class="btn" href="download/"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3v10M5.5 8.8 10 13.3l4.5-4.5M4 16.5h12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Download for Mac</a>
@@ -220,7 +213,7 @@
   </div>
 </footer>
 
-<script src="assets/film-scenes.js?v=040"></script>
-<script src="assets/film.js?v=040" data-src="assets/film/"></script>
+<script src="assets/film-scenes.js?v=041"></script>
+<script src="assets/film.js?v=041" data-src="assets/film/"></script>
 </body>
 </html>

@@ -2,7 +2,7 @@
 
 <h1 align="center">MacXray</h1>
 
-<p align="center"><b>Your Mac, from the inside.</b></p>
+<p align="center"><b>See inside your Mac.</b></p>
 
 <p align="center">
   <a href="https://github.com/victorabuchi/macxray-app/releases/latest/download/MacXray.dmg"><b>Download MacXray</b></a> ·
