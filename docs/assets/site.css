@@ -113,10 +113,6 @@ section { padding-block: 104px; }
 .titlebar i:nth-child(3) { background: #28c840; }
 .titlebar b { position: absolute; inset: 0; text-align: center; font: 600 12.5px/30px var(--text); color: var(--muted); pointer-events: none; }
 .window img { width: 100%; aspect-ratio: 8 / 5; object-fit: cover; object-position: top; background: var(--panel); }
-.scan::after { content: ""; position: absolute; left: 0; right: 0; top: -120px; height: 120px; pointer-events: none; opacity: 0;
-  background: linear-gradient(to bottom, transparent, color-mix(in srgb, var(--teal) 9%, transparent) 88%, var(--scan) 98%, transparent); }
-@media (prefers-reduced-motion: no-preference) { .scan::after { animation: scan 8s cubic-bezier(0.45, 0, 0.55, 1) 1.2s infinite; } }
-@keyframes scan { 0% { top: -120px; opacity: 0; } 6% { opacity: 1; } 62% { top: 100%; opacity: 1; } 63%, 100% { top: 100%; opacity: 0; } }
 
 /* What MacXray tells you, in its own words */
 .feed { list-style: none; margin: 48px 0 0; padding: 0; border-top: 1px solid var(--line); }
@@ -157,6 +153,59 @@ html:not(.js) .tour { grid-template-columns: minmax(0, 1fr); }
   .tabs button { margin: 0 0 -1px; padding: 10px 14px; border-left: 0; border-bottom: 3px solid transparent; white-space: nowrap; font-size: 16px; }
   .tabs button[aria-selected="true"] { border-bottom-color: var(--teal); }
 }
+
+/* The films: real screenshots of MacXray played scene by scene (film.js), adapted from Statiku's. A MacXray window with
+   a cursor and a label for what it points at; the tab playing is bold with a thin bar that fills as it plays. */
+.showcase { margin-top: 8px; }
+.film { position: relative; width: 100%; margin-inline: auto; }
+.film > img { width: 100%; border: 1px solid var(--line-2); border-radius: 14px; }
+.film-stage { position: relative; padding-bottom: 32px; }
+.film-glow { position: absolute; inset: 12% -3% 8%; z-index: 0; opacity: .28; filter: blur(70px); transition: background .8s ease; pointer-events: none; }
+.film-window { position: relative; z-index: 1; border: 1px solid var(--line-2); border-radius: 14px; overflow: hidden; background: var(--panel); }
+.film-chrome { position: relative; display: flex; align-items: center; height: 30px; padding-inline: 13px; background: var(--bg-2); border-bottom: 1px solid var(--line); }
+.film-dots { display: inline-flex; gap: 8px; }
+.film-dots i { width: 12px; height: 12px; border-radius: 50%; background: #ff5f57; }
+.film-dots i:nth-child(2) { background: #febc2e; }
+.film-dots i:nth-child(3) { background: #28c840; }
+.film-title { position: absolute; inset: 0; text-align: center; font: 600 12.5px/30px var(--text); color: var(--muted); pointer-events: none; }
+.film-viewport { position: relative; width: 100%; aspect-ratio: 8 / 5; overflow: hidden; background: var(--panel); }
+.film-frames { position: absolute; inset: 0; }
+.film-frames img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top; opacity: 0; transition: opacity .3s ease; user-select: none; }
+.film-frames img.on { opacity: 1; }
+.film-cursor { position: absolute; left: 0; top: 0; z-index: 3; width: 22px; height: 26px; margin: -2px 0 0 -2px; opacity: 0; pointer-events: none;
+  transition: transform .65s cubic-bezier(.4, 0, .2, 1), opacity .25s; filter: drop-shadow(0 2px 3px rgba(0, 0, 0, .35)); }
+.film-label { position: absolute; left: 0; top: 0; z-index: 3; padding: 6px 12px; border-radius: 99px; background: rgba(6, 18, 21, .88); color: #fff;
+  font: 600 13px var(--text); white-space: nowrap; pointer-events: none; opacity: 0; transition: transform .65s cubic-bezier(.4, 0, .2, 1), opacity .25s;
+  box-shadow: 0 0 0 1.5px color-mix(in srgb, var(--glow, #fff) 70%, transparent); }
+.film-ripple { position: absolute; left: -9px; top: -9px; width: 28px; height: 28px; border-radius: 50%; border: 2px solid var(--pulse); opacity: 0; }
+.film-ripple.go { animation: film-ripple .5s ease-out; }
+@keyframes film-ripple { from { transform: scale(.4); opacity: 1; } to { transform: scale(1.6); opacity: 0; } }
+.film-play { position: absolute; right: 16px; bottom: 16px; z-index: 4; display: grid; place-items: center; width: 38px; height: 38px; border: 1px solid rgba(255, 255, 255, .25);
+  border-radius: 50%; background: rgba(6, 18, 21, .8); color: #fff; cursor: pointer; }
+.film-play:hover { background: rgba(6, 18, 21, .95); }
+.film-tabs { position: absolute; left: 50%; bottom: 0; z-index: 6; display: flex; gap: 2px; width: max-content; max-width: calc(100% - 16px); padding: 3px 6px;
+  border: 1px solid var(--line-2); border-radius: 12px; background: color-mix(in srgb, var(--bg) 94%, transparent); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+  transform: translateX(-50%); overflow-x: auto; scrollbar-width: none; }
+.film-tabs::-webkit-scrollbar { display: none; }
+.film-tab { position: relative; flex: none; padding: 9px 13px 11px; border: 0; background: none; color: var(--muted); font: 500 15px var(--text); cursor: pointer; }
+.film-tab:hover { color: var(--ink); }
+.film-tab[aria-selected="true"] { color: var(--ink); font-weight: 700; }
+.film-progress { position: absolute; left: 0; bottom: 3px; width: 0; height: 3px; border-radius: 2px; background: var(--teal); transition: width .1s linear; }
+.film-caption { margin: 22px auto 0; max-width: 680px; min-height: 3.2em; text-align: center; color: var(--muted); font-size: 17px; line-height: 1.55; text-wrap: balance; }
+.film-caption b { color: var(--ink); font-weight: 650; }
+.film-caption.in { animation: film-caption .3s ease both; }
+@keyframes film-caption { from { opacity: 0; transform: translateY(4px); } }
+.demo-note { margin-top: 10px; text-align: center; color: var(--faint); font-size: 13px; }
+@media (max-width: 680px) {
+  .film-stage { padding-bottom: 0; }
+  .film-tabs { position: static; transform: none; flex-wrap: wrap; justify-content: center; width: auto; max-width: 100%; margin: 12px auto 0; border: 0; background: none;
+    -webkit-backdrop-filter: none; backdrop-filter: none; }
+  .film-tab { padding: 7px 10px 9px; font-size: 13.5px; }
+  .film-label { font-size: 11px; padding: 4px 9px; }
+  .film-play { right: 10px; bottom: 10px; width: 32px; height: 32px; }
+  .film-caption { font-size: 15.5px; }
+}
+@media (prefers-reduced-motion: reduce) { .film-cursor, .film-label, .film-frames img { transition: none; } }
 
 /* Columns of short facts, divided by hairlines */
 .cols { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0 32px; margin-top: 52px; border-top: 1px solid var(--line); }
