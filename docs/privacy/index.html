@@ -29,7 +29,7 @@
 
 <main id="main" class="wrap doc">
   <h1>Privacy</h1>
-  <p class="updated">Updated 6 November 2026</p>
+  <p class="updated">Updated 8 November 2026</p>
   <p class="lede">MacXray doesn't collect your data. There's no account, no analytics, no ads and no tracking, and nothing MacXray sees on your Mac is sent to us or to anyone else.</p>
 
   <h2>What MacXray reads on your Mac</h2>
@@ -39,6 +39,9 @@
     <li>Which files change and where. MacXray sees that a file changed, never what's inside it.</li>
     <li>Network connections: which app opened them, the server and port on the other end, and how much data flows. It never sees what's sent.</li>
     <li>The processor's cores, the graphics, memory, temperature state and the battery's readings.</li>
+    <li>When a key goes down or the pointer moves, from counters macOS keeps, never which key. MacXray can't read what you type. It also lists the keyboards, mice and trackpads connected, and the programs listening to your keyboard.</li>
+    <li>Whether the microphone, camera and speakers are in use and by which apps. MacXray never opens them, so it hears and sees nothing.</li>
+    <li>The Wi-Fi radio's readings (signal, noise, channel, speed and security), the router's address, the Bluetooth devices connected, and whether Location Services are on. macOS hides your Wi-Fi network's name from apps without Location access, and MacXray doesn't ask for it.</li>
     <li>The system log that macOS writes as it works.</li>
     <li>What you copy to the clipboard, in every format it was copied in.</li>
   </ul>
@@ -59,7 +62,7 @@
   <p>MacXray's window shows a page that MacXray serves to your own Mac at 127.0.0.1, an address no other computer can reach. It refuses requests from websites, so a page open in your browser can't read it. Open in Browser shows the same page in your browser, still served only to your Mac.</p>
 
   <h2>Permissions</h2>
-  <p>MacXray doesn't need your password or administrator rights. A few readings, such as the Neural Engine's load, need administrator rights, so MacXray shows them as unavailable instead of asking for them.</p>
+  <p>MacXray doesn't need your password or administrator rights. It doesn't ask for Input Monitoring, the microphone, the camera, Bluetooth or your location: the Keyboard, Sound and Wireless views use only what macOS shares without them. A few readings, such as the Neural Engine's load, need administrator rights, so MacXray shows them as unavailable instead of asking for them.</p>
 
   <h2>This website</h2>
   <p>This website has no cookies, no analytics and no trackers, and it loads nothing from other services. GitHub Pages hosts it and GitHub Releases serves the download, so GitHub receives the usual details of each visit, such as your IP address, as described in <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement">GitHub's privacy statement</a>.</p>
