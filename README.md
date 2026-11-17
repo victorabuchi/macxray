@@ -52,6 +52,6 @@ Something not right? [Open an issue](https://github.com/victorabuchi/macxray-app
 
 ## This repository
 
-It holds MacXray's website, in `docs` (served by GitHub Pages), and its downloads, in [Releases](https://github.com/victorabuchi/macxray-app/releases). MacXray's source code is private.
+It holds MacXray's website, in `docs` (served by GitHub Pages), its downloads, in [Releases](https://github.com/victorabuchi/macxray-app/releases), and MacMemory, the small Swift package MacXray reads your Mac's memory with: what apps use, wired, compressed, cached and free memory, memory pressure and swap. MacMemory is free to use under the MIT License; MacXray itself is not open source, and its source code is private.
 
 Apple, Mac, MacBook and macOS are trademarks of Apple Inc. MacXray isn't affiliated with or endorsed by Apple.
